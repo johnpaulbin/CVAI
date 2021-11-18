@@ -1,1 +1,27 @@
-<a>wip</a>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var input = document.getElementById("phrase");
+function rephraseSentence() {
+	const http = new XMLHttpRequest()
+
+	http.open("GET", "https://rephraser.johnpaulbin.repl.co/rephrase/" + input.value)
+	http.send()
+	http.onload = () => alert(http.responseText)
+}
+</script>
+</head>
+<body>
+
+<h1>Awesome Rephrasing</h1>
+
+<label for="fname">Your sentence</label>
+<input type="text" id="phrase" name="fname"><br><br>
+<input type="submit" value="Rephrase!" onclick="rephraseSentence()">
+
+
+<p>Response times are in the 500ms - 4s ranges.</p>
+
+</body>
+</html>

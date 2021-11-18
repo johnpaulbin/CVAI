@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-var input = document.getElementById("phrase");
-function rephraseSentence() {
-	const http = new XMLHttpRequest()
 
-	http.open("GET", "https://rephraser.johnpaulbin.repl.co/rephrase/" + input.value)
-	http.send()
-	http.onload = () => alert(http.responseText)
-}
-</script>
 </head>
 <body>
 
@@ -23,5 +14,16 @@ function rephraseSentence() {
 
 <p>Response times are in the 500ms - 4s ranges.</p>
 
+<script>
+var input = document.getElementById("phrase");
+function rephraseSentence() {
+	const http = new XMLHttpRequest()
+
+	http.open("GET", "https://rephraser.johnpaulbin.repl.co/rephrase/" + input.value)
+	http.send()
+	http.onload = () => alert(http.responseText)
+}
+</script>
+	
 </body>
 </html>

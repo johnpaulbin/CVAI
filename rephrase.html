@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +8,14 @@
 
 <h1>Awesome Rephrasing</h1>
 
-<label for="fname">Your sentence</label>
-<input type="text" id="phrase" name="fname"><br><br>
+<label for="fname">Your sentence: </label>
+<input type="text" id="phrase" name="fname" size="50"><br><br>
 <input type="submit" value="Rephrase!" onclick="rephraseSentence()">
 
 
 <p>Response times are in the 500ms - 4s ranges.</p>
+
+<input type="text" id="output" name="fname" size="50" readonly>
 
 <script>
 var input = document.getElementById("phrase");
@@ -21,7 +24,7 @@ function rephraseSentence() {
 
 	http.open("GET", "https://rephraser.johnpaulbin.repl.co/rephrase/" + input.value)
 	http.send()
-	http.onload = () => alert(http.responseText)
+	http.onload = () => document.getElementById("output").value = http.responseText;
 }
 </script>
 	
